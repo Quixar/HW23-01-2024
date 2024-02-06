@@ -379,12 +379,7 @@ bool operator == (Group& g, Group& g2)
 
 bool operator != (Group& g, Group& g2)
 {
-    if (g.GetStudentCount() != g2.GetStudentCount())
-    {
-        cout << "First group not equal to second\n";
-        return true;
-    }
-    return false;
+    return !(g == g2);
 }
 
 bool operator < (Student& s, Student& s2)
@@ -439,12 +434,7 @@ bool operator == (Student& s, Student& s2)
 
 bool operator != (Student& s, Student& s2)
 {
-    if (s.CalculateAverageGrade() != s2.CalculateAverageGrade())
-    {
-        cout << "Students dont have the same average score\n";
-        return true;
-    }
-    return false;
+    return !(s == s2);
 }
 
 Group operator += (Group& g, Student& s)
